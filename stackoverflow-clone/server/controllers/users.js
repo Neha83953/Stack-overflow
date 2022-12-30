@@ -1,9 +1,9 @@
 import mongoose from 'mongoose'
-import user from '../models/auth.js'
+import User from '../models/auth.js'
 
 export const getAllUsers = async (req, res) => {
     try {
-        const allUsers = await users.find();
+        const allUsers = await User.find();
         const allUserDetails = []
         allUsers.forEach(user => {
             allUserDetails.push({ _id: user._id, name: user.name, about: user.about, tags: user.tags, joinedOn: user.joinedOn })
